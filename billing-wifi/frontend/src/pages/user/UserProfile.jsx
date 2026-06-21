@@ -35,7 +35,7 @@ const UserProfile = () => {
         updateData.password = password;
       }
 
-      await api.put(``/users/${user.id}`, updateData, config);
+      await api.put(`/users/${user.id}`, updateData, config);
       
       // Update local storage and auth context state
       const updatedUser = { ...user, name, email };

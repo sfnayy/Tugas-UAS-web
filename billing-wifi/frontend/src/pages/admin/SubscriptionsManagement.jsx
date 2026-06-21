@@ -66,7 +66,7 @@ const SubscriptionsManagement = () => {
 
     try {
       if (editingId) {
-        await api.put(``/subscriptions/${editingId}`, formData, config);
+        await api.put(`/subscriptions/${editingId}`, formData, config);
         setSuccess('Subscription updated successfully.');
       } else {
         await api.post('/subscriptions', formData, config);
@@ -97,7 +97,7 @@ const SubscriptionsManagement = () => {
       try {
         setError('');
         setSuccess('');
-        await api.delete(``/subscriptions/${id}`, config);
+        await api.delete(`/subscriptions/${id}`, config);
         setSuccess('Subscription deleted.');
         fetchData();
       } catch (err) {

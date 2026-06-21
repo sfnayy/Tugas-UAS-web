@@ -6,6 +6,7 @@ import UserLayout from './layouts/UserLayout';
 
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import Landing from './pages/Landing';
 
 import AdminDashboard from './pages/admin/AdminDashboard';
 import UserManagement from './pages/admin/UserManagement';
@@ -20,8 +21,8 @@ import UserProfile from './pages/user/UserProfile';
 function App() {
   return (
     <Routes>
-      {/* Root route redirects to auth for now, or you can point to a landing page */}
-      <Route path="/" element={<Navigate to="/auth/login" replace />} />
+      {/* Root route points to landing page */}
+      <Route path="/" element={<Landing />} />
 
       {/* Authentication Routes */}
       <Route path="/auth" element={<AuthLayout />}>

@@ -33,7 +33,7 @@ const UserManagement = () => {
         // Only send password if it was changed
         const updatePayload = { ...formData };
         if (!updatePayload.password) delete updatePayload.password;
-        await api.put(``/users/${editingId}`, updatePayload, config);
+        await api.put(`/users/${editingId}`, updatePayload, config);
       } else {
         await api.post('/users', formData, config);
       }
@@ -55,7 +55,7 @@ const UserManagement = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this user?')) {
       try {
-        await api.delete(``/users/${id}`, {
+        await api.delete(`/users/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchUsers();

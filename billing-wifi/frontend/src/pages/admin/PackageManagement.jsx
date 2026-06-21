@@ -30,7 +30,7 @@ const PackageManagement = () => {
     try {
       const config = { headers: { Authorization: `Bearer ${token}` } };
       if (editingId) {
-        await api.put(``/packages/${editingId}`, formData, config);
+        await api.put(`/packages/${editingId}`, formData, config);
       } else {
         await api.post('/packages', formData, config);
       }
@@ -52,7 +52,7 @@ const PackageManagement = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this package?')) {
       try {
-        await api.delete(``/packages/${id}`, {
+        await api.delete(`/packages/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         fetchPackages();
